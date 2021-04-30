@@ -1,0 +1,36 @@
+<section class="container-md movie-form">
+  <form #mForm="ngForm">
+    <div class="form-group">
+      <label class="text-warning" for="title">Movie Title:</label>
+      <input id="title" type="text" class="form-control"
+        required minlength="5" maxlength="25" pattern="" name="title" [(ngModel)]="movie.title">
+    </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <label class="text-warning" for="year">Release year:</label>
+        <input id="year" type="text" class="form-control"
+        required pattern="" name="year" [(ngModel)]="movie.year">
+      </div>
+
+      <div class="form-group col-6">
+        <label class="text-warning" for="category">Category:</label>
+        <select class="form-control" id="category" name="category" [(ngModel)]="movie.category">
+          <option value="Choose Category" selected>Choose Category</option>
+          <option value="Drama">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Fantasy">Fantasy</option>
+        </select>
+      </div>
+    </div>
+
+    <button (click)="saveMovie()" class="btn btn-warning" [disabled]="!mForm.valid">Save</button>
+
+    <br>
+    <small class="text-danger" [hidden]="mForm.valid">Fill all field to save!</small>
+    
+    
+
+  </form>
+
+
+</section>

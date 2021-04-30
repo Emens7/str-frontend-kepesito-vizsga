@@ -1,0 +1,24 @@
+@import './mixin';
+
+
+th, #get-button {
+    @include cinema-background-style;
+}
+
+th, td, #get-button {
+    @include set-text;
+}
+
+#delete-button {
+    @include delete-style;
+}
+
+.table-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+tbody > tr:nth-child(2n+2) {
+    background-color: rgb(170, 170, 170);
+}
